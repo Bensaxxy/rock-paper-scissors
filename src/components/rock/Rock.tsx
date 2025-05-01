@@ -1,4 +1,4 @@
-import rockImage from "../../../public/images/icon-Rock.svg";
+import rockImage from "../../../public/images/icon-rock.svg";
 import { MouseEventHandler } from "react";
 
 const Rock = ({ onClick }: { onClick: MouseEventHandler<HTMLDivElement> }) => {
