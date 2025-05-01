@@ -1,7 +1,7 @@
-import scissorsImage from "../../../public/images/icon-scissors.svg";
+import lizardImage from "../../../public/images/icon-lizard.svg";
 import { MouseEventHandler } from "react";
 
-const Scissors = ({
+const Lizard = ({
   onClick,
 }: {
   onClick: MouseEventHandler<HTMLDivElement>;
@@ -15,12 +15,11 @@ const Scissors = ({
         <div
           className="flex flex-col items-center justify-center p-2 w-[130px] h-[130px] rounded-full"
           style={{
-            background: "var(--Scissors-Gradient)",
+            background: "var(--Lizard-Gradient)",
           }}
         >
           <div className=" bg-white flex flex-col items-center justify-center p-2 w-[100px] h-[100px] rounded-full">
-            {/* <div className=" bg-red-500 w-20 h-10"></div> */}
-            <img src={scissorsImage} alt="" />
+            <img src={lizardImage} alt="" />
           </div>
         </div>
       </div>
@@ -28,4 +27,4 @@ const Scissors = ({
   );
 };
 
-export default Scissors;
+export default Lizard;

@@ -1,10 +1,16 @@
 import React from "react";
 
 interface RulesProps {
-  onClose: () => void; // Define the type for the onClose prop
+  onClose: () => void;
+  gameMode: string; // Add gameMode prop
 }
 
-const Rules: React.FC<RulesProps> = ({ onClose }) => {
+const Rules: React.FC<RulesProps> = ({ onClose, gameMode }) => {
+  const rulesImageSrc =
+    gameMode === "normal"
+      ? "/images/image-rules.svg"
+      : "/images/image-rules-bonus.svg";
+
   return (
     <>
       <div className=" hidden min-h-screen w-screen md:flex items-center justify-center bg-black/80 bg-opacity-50 fixed inset-0 z-50">
@@ -22,11 +28,7 @@ const Rules: React.FC<RulesProps> = ({ onClose }) => {
             </button>
           </div>
           <div>
-            <img
-              src="/images/image-rules-bonus.svg"
-              alt="Game Rules"
-              className="w-full mt-8"
-            />
+            <img src={rulesImageSrc} alt="Game Rules" className="w-full mt-8" />
           </div>
         </div>
       </div>
@@ -38,11 +40,7 @@ const Rules: React.FC<RulesProps> = ({ onClose }) => {
           rules
         </h1>
         <div>
-          <img
-            src="/images/image-rules.svg" // Fixed typo (was .cvg)
-            alt="Game Rules"
-            className="w-full mt-8"
-          />
+          <img src={rulesImageSrc} alt="Game Rules" className="w-full mt-8" />
         </div>
         <button onClick={onClose}>
           <img

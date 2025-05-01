@@ -1,15 +1,37 @@
+import { useState, useEffect } from "react";
+
 interface HeaderProps {
   score: number;
+  gameMode: string;
 }
 
-const Header = ({ score }: HeaderProps) => {
+const Header = ({ score, gameMode }: HeaderProps) => {
+  const [logoSrc, setLogoSrc] = useState(() =>
+    gameMode === "normal" ? "./images/logo.svg" : "./images/logo-bonus.svg"
+  );
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    setAnimate(true); // Trigger animation on gameMode change
+    setTimeout(() => {
+      setLogoSrc(
+        gameMode === "normal" ? "./images/logo.svg" : "./images/logo-bonus.svg"
+      );
+      setAnimate(false); // Reset animation state
+    }, 200); // Duration should match your CSS transition
+  }, [gameMode]);
+
   return (
     <div>
-      <div className=" border-2 p-4 rounded-xl border-[var(--Header-Outline)] flex items-center justify-between w-[350px] md:w-[600px] md:mb-6">
-        <div>
+      <div className=" border-2 p-4 rounded-xl border-[var(--Header-Outline)] flex items-center justify-between w-[350px] md:w-[600px] md:mb-2">
+        <div
+          className={`transition-opacity duration-300 ease-in-out ${
+            animate ? "opacity-50" : "opacity-100"
+          }`}
+        >
           <img
             className=" w-[120px] md:w-full"
-            src="./images/logo.svg"
+            src={logoSrc}
             alt="logo image"
           />
         </div>

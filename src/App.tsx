@@ -13,6 +13,20 @@ const App = () => {
       <div className=" px-6">
         <Home />
       </div>
+      <div className=" text-center text-white">
+        Challenge by{" "}
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          Frontend Mentor
+        </a>
+        . Coded by{" "}
+        <a
+          href="https://www.frontendmentor.io/profile/Bensaxxy"
+          className=" hover:text-red-500 duration-500"
+        >
+          Bensaxxy
+        </a>
+        .
+      </div>
     </div>
   );
 };

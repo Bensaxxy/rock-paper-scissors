@@ -32,6 +32,10 @@ const Picked = ({
         return "/images/icon-rock.svg";
       case "scissors":
         return "/images/icon-scissors.svg";
+      case "spock":
+        return "/images/icon-spock.svg";
+      case "lizard":
+        return "/images/icon-lizard.svg";
       default:
         return "";
     }
@@ -45,6 +49,10 @@ const Picked = ({
         return "var(--Rock-Gradient)";
       case "scissors":
         return "var(--Scissors-Gradient)";
+      case "spock":
+        return "var(--Spock-Gradient)";
+      case "lizard":
+        return "var(--Lizard-Gradient)";
       default:
         return "";
     }
